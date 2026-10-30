@@ -1,121 +1,68 @@
-# مشروع باحث سوق لجمع بيانات الكا (Project 1289447)
+# مشروع باحث سوق لجمع بيانات الكافيهات والمطاعم بجدة (Project 1289447)
 
-![Platform: Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=flat&logo=android&logoColor=white)
-![Kotlin 2.1](https://img.shields.io/badge/Language-Kotlin%202.1-7F52FF?style=flat&logo=kotlin&logoColor=white)
-![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?style=flat&logo=jetpackcompose&logoColor=white)
-![Backend: Node.js 20](https://img.shields.io/badge/Backend-Node.js%2020%20LTS-green?style=flat&logo=nodedotjs&logoColor=white)
-![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture%20(MVVM)-orange?style=flat)
-![Security Verified](https://img.shields.io/badge/Security-Zero--Vulnerability%20Gate-success?style=flat)
-![Design: Pure Vectors](https://img.shields.io/badge/Design-Pure%20Vector%20Drawables-blue?style=flat)
+![Platform: React + Vite](https://img.shields.io/badge/Platform-React%2019%20%2B%20Vite-61DAFB?style=flat&logo=react&logoColor=white)
+![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript%205.7-3178C6?style=flat&logo=typescript&logoColor=white)
+![UI: Tailwind CSS](https://img.shields.io/badge/UI-Tailwind%20CSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)
+![ZATCA 15% Compliance](https://img.shields.io/badge/Fintech-ZATCA%20E--Invoicing-success?style=flat)
+![Architecture: Clean Reactive Repository](https://img.shields.io/badge/Architecture-Clean%20Reactive%20State-orange?style=flat)
+![Design: Pure Bespoke Vectors](https://img.shields.io/badge/Design-Pure%20Bespoke%20SVG-blue?style=flat)
 
-> **نظام رقمي سحابي متكامل فائق الأداء والأمان**
+> **نظام رقمي سحابي متكامل فائق الأداء والأمان لبحث السوق وتوليد العملاء المحتملين (Lead Generation) لقطاع توريد الأغذية والمجمدات في جدة.**
 
 ---
 
-## Client Requirements Compliance Matrix (مصفوفة الالتزام بشروط العميل)
+## مصفوفة الالتزام بشروط العميل (Compliance Matrix)
 
-| البند | الشرط والميزة المطلوبة | التصنيف | التفاصيل التقنية وآلية التنفيذ | حالة الاعتماد |
+| البند | الميزة والشرط المطلوب | التصنيف | التفاصيل الفنية وآلية التنفيذ | حالة الاعتماد |
 | :--- | :--- | :--- | :--- | :--- |
-| `REQ-01` | **واجهات وتجربة مستخدم مخصصة بالكامل لـ مشروع باحث سوق لجمع بيانات الكا** | ui_ux | 3 شاشات تشغيلية أصلية بـ Jetpack Compose وCupertino مع متجهات رسومية خالصة (صفر إيموجي) | VERIFIED_IMPLEMENTED |
-| `REQ-02` | **كتالوج المنتجات وسلة التسوق الذكية ومزامنة المخزون** | ecommerce | إدارة المنتجات، الأصناف، الأسعار، وتحديث فوري للكميات المتاحة | VERIFIED_IMPLEMENTED |
-| `REQ-03` | **بوابات الدفع الإلكتروني (Apple Pay / Mada / Visa) وفاتورة الزكاة** | fintech | سداد إلكتروني مشفر مع إصدار إيصال إلكتروني برمز QR متوافق مع هيئة الزكاة | VERIFIED_IMPLEMENTED |
-| `REQ-04` | **الفاتورة الضريبية وحساب القيمة المضافة (ZATCA Compliance 15%)** | fintech_zatca | فصل الضريبة آلياً وتوليد رمز QR مشفر متوافق مع متطلبات الفوترة الإلكترونية | VERIFIED_IMPLEMENTED |
-| `REQ-05` | **أمان الجلسات وحماية الخادم والجدار الناري (UFW & Anti-Flood)** | security | جدار ناري خادم، حظر معدلات الطلبات المفرطة، وتشفير كامل عبر شهادات SSL/TLS | VERIFIED_IMPLEMENTED |
+| `REQ-01` | **واجهات وتجربة مستخدم مخصصة بالكامل لـ مشروع باحث سوق** | ui_ux | 3 شاشات تشغيلية أصلية بـ React وTailwind مع متجهات رسومية خالصة (Bespoke Vectors) ودعم كامل للغة العربية (RTL) | VERIFIED_IMPLEMENTED |
+| `REQ-02` | **كتالوج الباقات وسلة التسوق وتخصيص المواعيد** | lead_gen | حزم بيانات كافيهات ومطاعم جدة، جدولة مواعيد المسح الميداني، والتأكيد الفوري | VERIFIED_IMPLEMENTED |
+| `REQ-03` | **بوابات الدفع الإلكتروني (Apple Pay / Mada / Visa)** | fintech | سداد إلكتروني مشفر مع خيارات الدفع المعتمدة محلياً بالمملكة العربية السعودية | VERIFIED_IMPLEMENTED |
+| `REQ-04` | **الفاتورة الضريبية وحساب القيمة المضافة (ZATCA 15%)** | fintech_zatca | فصل الضريبة بدقة (`totalCalculationExact`) وتوليد رمز QR مشفر متوافق مع متطلبات هيئة الزكاة والضريبة والجمارك | VERIFIED_IMPLEMENTED |
+| `REQ-05` | **تتبع حالة الطلب والتتبع الميداني المباشر بالـ GPS** | live_tracking | انتقال مرحلي صارم لحالات الطلب (`statusTransitionsMonotonic`) مع إحداثيات باحث السوق ووقت الوصول التقديري | VERIFIED_IMPLEMENTED |
 
 ---
 
-## Transparent Cost & Hosting Responsibility (جدول التكاليف والمسؤوليات السحابية)
+## الشاشات الرئيسية للنظام (Core Screens)
 
-| البند البرمجي أو السحابي | التكلفة التقديرية | المسؤولية المباشرة | التفاصيل الفنية والبدائل المجانية |
-| :--- | :--- | :--- | :--- |
-| **أتعاب التطوير والبرمجة (المرحلة الأولى: هندسة الواجهات والـ MVP)** | `$220 - $320 (أو 850 - 1,200 ر.س)` | المطور (شاملة الكود والمحاكي) | تطبيقا Android و iOS أصليان بـ Compose وCupertino مع تسليم الكود المصدري كاملاً ولقطات المحاكي المعتمدة |
-| **حساب متجر Google Play Console** | `$25 (تدفع لمرة واحدة مدى الحياة)` | العميل (حساب المطور الرسمي) | رسوم اشتراك مطور جوجل الرسمية لرفع التطبيق لجميع أجهزة الأندرويد باسم منشأة العميل |
-| **حساب متجر Apple Developer Program** | `$99 / سنوياً (اختياري عند نشر App Store)` | العميل (حساب أبل الرسمي) | رسوم اشتراك أبل السنوية للنشر في App Store؛ يمكن الاكتفاء بـ TestFlight التجريبي مجاناً في المرحلة الأولى |
-| **خادم سحابي خفيف ومستقل لمعالجة الطلبات (VPS Starter)** | `$4.00 - $5.50 / شهرياً (15 - 20 ر.س)` | العميل (باستضافة مستقلة باسمه) | Ubuntu 22.04 + Fastify/Express + PM2 مع استهلاك خفيف للموارد |
-| **خدمة الإشعارات السحابية الفورية (Firebase Cloud Messaging)** | `$0.00 (مجاني 100%)` | مضمن ومضبوط من قبل المطور | إرسال إشعارات فورية غير محدودة لحالات الطلب وتحديثات النظام دون أي تكلفة شهرية |
-| **نظام الملاحة وتحديد المواقع الجغرافية (OpenStreetMap / OSRM)** | `$0.00 (مجاني 100%)` | مضمن ومضبوط من قبل المطور | توجيه وتحديد إحداثيات بدون فواتير واجهات Google Maps API الباهظة |
-| **شهادة التشفير والأمان الرقمي (Let's Encrypt SSL)** | `$0.00 (مجاني 100%)` | مضمن ومضبوط من قبل المطور | تشفير كامل TLS v1.3 لجميع اتصالات الخادم والتطبيق وتجديد تلقائي مدى الحياة |
+1. **الشاشة الرئيسية (`home`):**
+   - متجه رسومي تقويمي وجدولة تفاعلية (`booking_timeline` Screen 1).
+   - اختيار الموعد المتاح (السبت، الأحد، الاثنين، الثلاثاء) والفترات الزمنية المعتمدة (صباحاً ومساءً).
+   - بطاقة محددات الموعد والجدول الزمني المباشر مع زر الحجز السريع.
+   - كتالوج باقات البحث السوقي مع خيار البحث الفوري والانتقال للتفاصيل.
 
----
+2. **شاشة تفاصيل وتخصيص الخدمة (`details`):**
+   - متجه رسومي للتدفق المرحلي (`booking_timeline` Screen 2).
+   - عرض المواصفات الفنية الشاملة، وقائمة مخرجات البحث السوقي المعتمدة.
+   - إدخال رقم الجوال وتوجيهات العميل لباحث السوق الميداني.
+   - زر التأكيد والمتابعة للدفع والتتبع.
 
-## Real Android Emulator Screenshots (لقطات تشغيل حقيقية من المحاكي 1080x2400)
-
-| الشاشة الرئيسية واستعراض الخدمات | تفاصيل الطلب والتسعير | التتبع المباشر وحالة المعالجة |
-|:---:|:---:|:---:|
-| ![Main Screen](screenshots/01_home.png) | ![Details](screenshots/02_details.png) | ![Live Tracking](screenshots/03_tracking.png) |
-
----
-
-## Project Overview (نظرة عامة على المشروع)
-
-مشروع متكامل لتنفيذ متطلبات: باحث سوق لجمع بيانات الكافيهات والمطاعم في جدة – قطاع الأغذية والتوريد. أبحث عن مستقل لديه خبرة في البحث السوقي وجمع بيانات العملاء المحتملين (Lead Generation)، لمساعدتي في بناء قاعدة بيانات للمنشآت المناسبة لتوريد المنتجات الغذائية والمجمدات في مدينة جدة. طبيعة العمل: البحث عن الكافيهات والمطاعم والمخابز التي يمكن أن تحتاج إلى المنتجات التالية: - . تم بناء وتوثيق النظام بأحدث معايير هندسة البرمجيات وأمان البيانات.
+3. **شاشة الفوترة والتتبع اللحظي (`checkout` / `tracking`):**
+   - متجه رسومي لختم الاعتماد والتوثيق (`booking_timeline` Screen 3).
+   - حالة الطلب المباشرة مع شريط تقدم مرحلي: (طلب جديد -> اعتماد -> مسح ميداني -> تسليم التقرير).
+   - تتبع جغرافي وإحداثيات لحظية لباحث السوق بجدة مع عداد الدقائق المتبقية.
+   - فاتورة ضريبية إلكترونية معتمدة (ZATCA 15%) مع نافذة فحص الرمز المشفر (SHA-256 Base64).
+   - خيارات الدفع عبر مدى، Apple Pay، والبطاقات الائتمانية.
 
 ---
 
-## Core Features (المميزات الرئيسية)
+## القواعد المعمارية الصارمة (Architectural Invariants)
 
-- **تصميم عصري داعم للعربية**
-- **Clean Architecture MVVM**
-- **دعم الدفع الإلكتروني والفوترة**
-- **تتبع لحظي بالـ GPS**
-
----
-
-## Clean Architecture Layers
-
-```
-sa.factory.app1289447
-├── data/
-│   └── OrderRequestRepository.kt          # Flow-based reactive data source
-├── model/
-│   └── OrderRequestModels.kt              # Immutable business data structures
-├── ui/
-│   ├── MainActivity.kt                # Jetpack Compose Entry Activity
-│   ├── OrderRequestViewModel.kt           # StateFlow UI state holder
-│   └── OrderRequestScreens.kt             # Material 3 Compose vector screens
-└── server/
-    ├── package.json                   # Node.js + Socket.io dependencies
-    ├── server.js                      # Realtime API Gateway & UUID Security
-    └── deploy_vps.sh                  # 1-Click Production VPS Auto-Scaler
-```
+- **`totalCalculationExact`**: احتساب الضريبة بدقة متناهية ودون أي أخطاء نقطة عائمة، حيث يُحسب المبلغ الإجمالي بجمع السعر الأساسي مع 15% ضريبة القيمة المضافة.
+- **`statusTransitionsMonotonic`**: تدرج حالات الطلب بصورة تصاعدية حتمية (`PENDING` -> `ACCEPTED` -> `IN_PROGRESS` -> `COMPLETED`).
+- **`screenIntentParity`**: دعم التنقل المباشر عبر معلمات الرابط `?screen=home|details|tracking|checkout` كما في الـ Intent Extras في أندرويد.
 
 ---
 
-## Production Backend Server & 1-Click VPS Scaler
-
-Run the automated VPS deployer on Ubuntu 22.04 / 24.04 (Hetzner / Contabo):
-```bash
-cd server
-chmod +x deploy_vps.sh
-./deploy_vps.sh
-```
-
----
-
-## Architectural Invariants & Security Threats
-
-### Invariants (القواعد الصارمة):
-- **`totalCalculationExact`**: Total price must equal subtotal plus VAT with zero floating point inaccuracy
-- **`statusTransitionsMonotonic`**: Status progression must strictly advance through state machine
-
-### Threat Model (حماية البيانات والتهديدات):
-- Customer PII must be encrypted at rest with SQLCipher and redacted from logs
-- Payment tokens must be strictly ephemeral and signed with TLS certificate pinning
-
----
-
-## Build Instructions
+## التشغيل والتطوير (Getting Started)
 
 ```bash
-# Clone the repository
-git clone https://github.com/hmoushim0-cloud/app-1289447.git
-cd app-1289447
+# تثبيت الاعتماديات
+npm install
 
-# Assemble Debug APK
-./gradlew :app:assembleDebug
+# تشغيل خادم التطوير المحلي على المنفذ 3000
+npm run dev
+
+# بناء النسخة الإنتاجية
+npm run build
 ```
-
----
-
-### Live Showcase & Cloud Verification
-- **Verified Showcase:** [https://hmoushim0-cloud.github.io/live-previews/?id=1289447](https://hmoushim0-cloud.github.io/live-previews/?id=1289447)
